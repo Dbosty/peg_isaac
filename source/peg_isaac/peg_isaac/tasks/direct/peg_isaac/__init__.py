@@ -14,10 +14,10 @@ from . import agents
 
 gym.register(
     id="Template-Peg-Isaac-Direct-v0",
-    entry_point=f"{__name__}.peg_isaac_env:QuadcopterEnv",
+    entry_point=f"{__name__}.peg_isaac_env_multi:QuadcopterEnv",
     disable_env_checker=True,
     kwargs={
-        "env_cfg_entry_point": f"{__name__}.peg_isaac_env:QuadcopterEnvCfg",
+        "env_cfg_entry_point": f"{__name__}.peg_isaac_env_multi:QuadcopterEnvCfg",
         "rl_games_cfg_entry_point": f"{agents.__name__}:rl_games_ppo_cfg.yaml",
         "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
     },
