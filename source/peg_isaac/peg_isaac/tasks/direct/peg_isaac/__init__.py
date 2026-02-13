@@ -13,14 +13,17 @@ from . import agents
 
 gym.register(
     id="Template-Peg-Isaac-Direct-v0",
-    entry_point=f"{__name__}.peg_isaac_env_marl:PursuitEvasionDirectMARLEnv",
+    # entry_point=f"{__name__}.peg_isaac_env_marl:PursuitEvasionDirectMARLEnv",
     # entry_point=f"{__name__}.peg_isaac_env_multi:QuadcopterEnv",
+    entry_point=f"{__name__}.peg_isaac_env:QuadcopterEnv",
     disable_env_checker=True,
     kwargs={
-        "env_cfg_entry_point": f"{__name__}.peg_isaac_env_marl:PursuitEvasionEnvCfg",
-        "skrl_ippo_cfg_entry_point": f"{agents.__name__}:skrl_ippo_jax_cfg.yaml",
+        # "env_cfg_entry_point": f"{__name__}.peg_isaac_env_marl:PursuitEvasionEnvCfg",
+        # "skrl_ippo_cfg_entry_point": f"{agents.__name__}:skrl_ippo_jax_cfg.yaml",
         # "env_cfg_entry_point": f"{__name__}.peg_isaac_env_multi:QuadcopterEnvCfg",
         # "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
+        "env_cfg_entry_point": f"{__name__}.peg_isaac_env:QuadcopterEnvCfg",
+        "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
     },
 )
 
