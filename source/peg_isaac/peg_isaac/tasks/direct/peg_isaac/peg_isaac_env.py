@@ -85,13 +85,17 @@ class QuadcopterEnvCfg(DirectRLEnvCfg):
     )
 
     # scene
+    # scene: InteractiveSceneCfg = InteractiveSceneCfg(
+    #     num_envs=4096, env_spacing=2.5, replicate_physics=True, clone_in_fabric=True
+    # )
     scene: InteractiveSceneCfg = InteractiveSceneCfg(
-        num_envs=4096, env_spacing=2.5, replicate_physics=True, clone_in_fabric=True
+        num_envs=1.0, env_spacing=0.0, replicate_physics=True, clone_in_fabric=True
     )
 
     # robot
     robot: ArticulationCfg = CRAZYFLIE_CFG.replace(prim_path="/World/envs/env_.*/Robot")
-    thrust_to_weight = 1.9
+    # thrust_to_weight = 1.9
+    thrust_to_weight = 4.0
     moment_scale = 0.01
 
     # reward scales
